@@ -1,0 +1,31 @@
+<wxs src="./game.wxs" module="tools" />
+<view class="game-container">
+  <image src="../../assets/game-bg.jpg" class="bg"></image>
+  <view class="summary">
+    <text>局数: {{game.count}}</text>
+    <text>上把: {{game.count>0?game.winner[game.count-1]:'无'}}</text>
+  </view>
+  <block wx:key="role" wx:for="{{players}}">
+    <view class="player {{item.role}}">
+      <view class="info">
+        <text class="role">{{role_zh[item.role]}}</text>
+        <view class="avatar" data-index="{{index}}" bindtap="choose">{{item.name}}</view>
+        <view class="score">
+          <text>胜: {{item.win}}</text>
+          <text>分: {{tools.cal(item.base, item.score)}}</text>
+        </view>
+      </view>
+      <view class="input-group">
+        <button class="flag-btn minus" size="mini" data-index="{{index}}" bindtap="minus">-</button>
+        <input  class="flag-input {{item.value>=0?'score-add':'score-minus'}}" type="number" bindinput="bindKeyInput" placeholder="请输入分数" data-index="{{index}}" value="{{item.value}}"/>
+        <button class="flag-btn add" size="mini" data-index="{{index}}" bindtap="add">+</button>
+      </view>
+    </view>
+  </block>
+  <view class="action-btn">
+    <button size="mini" type="warn" bindtap="home">新开</button>
+    <button size="mini" type="primary" bindtap="end">结束</button>
+    <button size="mini" type="default" bindtap="reset">重置</button>
+    <button size="mini" type="default" bindtap="detail">查看</button>
+  </view>
+</view>

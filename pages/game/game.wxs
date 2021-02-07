@@ -1,0 +1,11 @@
+
+var cal = function (base, score) {
+  var s = base
+  for (var i = 0; i < score.length; ++i) {
+    s += score[i]
+  }
+  return s
+}
+module.exports = {
+  cal: cal
+}

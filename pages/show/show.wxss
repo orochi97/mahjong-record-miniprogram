@@ -1,0 +1,87 @@
+.show-container {
+  display: flex;
+  flex-direction: column;
+}
+.table {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: white;
+}
+.column {
+  border-left: 1px solid gray;
+  width: 18%;
+  display: flex;
+  flex-direction: column;
+}
+.column.index {
+  width: 28%;
+}
+.column-item {
+  border-bottom: 1px solid gray;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+.column-item.index {
+  display: flex;
+  justify-content: center;
+}
+.score {
+  font-weight: bold;
+}
+.minus {
+  background-color: #93FF93
+}
+.add {
+  background-color: #ff7575;
+}
+.east {
+  background-color: #00FFFF;
+}
+.south {
+  background-color: red;
+}
+.west {
+  background-color: white;
+}
+.north {
+  background-color: black;
+  color: white;
+}
+.summary {
+  background-color: orange;
+}
+
+.tabbar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: row;
+}
+.tabbar-item {
+  width: 50%;
+  line-height: 40px;
+  text-align: center;
+  background-color: #84C1FF;
+}
+
+.line {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+ 
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,22 @@
+<view class="container">
+  <image src="../../assets/home-bg.jpg" class="bg"></image>
+  <view style="position: fixed;">
+    <view class="input-item">
+      <label>东风</label><input type="text" placeholder="请输入角色名" model:value="{{east}}"/>
+    </view>
+    <view class="input-item">
+      <label>南风</label><input type="text" placeholder="请输入角色名" model:value="{{south}}"/>
+    </view>
+    <view class="input-item">
+      <label>西风</label><input type="text" placeholder="请输入角色名" model:value="{{west}}"/>
+    </view>
+    <view class="input-item">
+      <label>北风</label><input type="text" placeholder="请输入角色名" model:value="{{north}}"/>
+    </view>
+    <view class="input-item">
+      <label>底分</label><input type="number" placeholder="请输入底分" model:value="{{base}}"/>
+    </view>
+    <button type="primary" bindtap="create" style="margin-bottom: 10px;">开始</button>
+    <button bindtap="reset">重置</button>
+  </view>
+</view>

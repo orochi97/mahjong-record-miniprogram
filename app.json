@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/game/game",
+    "pages/show/show",
+    "pages/home/home"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ADD8E6",
+    "navigationBarTitleText": "麻将记数",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

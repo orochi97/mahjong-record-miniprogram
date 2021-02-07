@@ -1,0 +1,53 @@
+<wxs src="../game/game.wxs" module="tools" />
+<view class="show-container">
+  <view class="tabbar">
+    <view class="tabbar-item" style="border-right: 1px solid #ccc;" data-type="table" bindtap="change">表格图</view>
+    <view class="tabbar-item" style="border-left: 1px solid #ccc;" data-type="line" bindtap="change">折线图</view>
+  </view>
+  <view class="line" style="display: {{type==='line'?'flex':'none'}};">
+    <ec-canvas id="mychart-dom-graph" canvas-id="mychart-graph" ec="{{ ec }}"></ec-canvas>
+  </view>
+  <view class="table" style="display: {{type==='table'?'flex':'none'}};">
+    <view class="column index">
+      <view class="column-item">
+        <text>序(赢家)</text>
+      </view>
+      <view class="column-item">
+        <text>底分</text>
+      </view>
+      <block wx:key="index" wx:for="{{game.winner}}">
+        <view class="column-item index">
+          <label>{{index+1}}</label>
+          <label>({{item}})</label>
+        </view>
+      </block>
+      <view class="column-item">
+        <text>总分</text>
+      </view>
+      <view class="column-item">
+        <text>赢局</text>
+      </view>
+    </view>
+    <block wx:key="index" wx:for="{{game.players}}">
+      <view class="column">
+        <view class="column-item {{item.role}}">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="column-item score summary">
+          <text>{{item.base}}</text>
+        </view>
+        <block wx:key="index" wx:for="{{item.score}}">
+          <view class="column-item {{item>0?'add':'minus'}}">
+            <text class="score">{{item}}</text>
+          </view>
+        </block>
+        <view class="column-item score summary">
+          <text>{{tools.cal(item.base, item.score)}}</text>
+        </view>
+        <view class="column-item score summary">
+          <text>{{item.win}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

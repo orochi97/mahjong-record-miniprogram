@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分数展示",
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  }
+}
